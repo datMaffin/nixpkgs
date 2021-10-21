@@ -2,6 +2,7 @@
 , mkDerivation
 , fetchFromGitHub
 , cmake
+, inkscape
 , inotify-tools
 , libcloudproviders
 , libsecret
@@ -20,13 +21,13 @@
 
 mkDerivation rec {
   pname = "nextcloud-client";
-  version = "3.2.1";
+  version = "3.3.5";
 
   src = fetchFromGitHub {
     owner = "nextcloud";
     repo = "desktop";
     rev = "v${version}";
-    sha256 = "sha256-I31w79GDZxSGlT6YPKSpq0aiyGnJiJBVdTyWI+DUoz4=";
+    sha256 = "sha256:0cnmnnkscjxpcw2rm72b92m1sr12y5ibdln3zzifdz06zps4v8wj";
   };
 
   patches = [
@@ -38,6 +39,7 @@ mkDerivation rec {
   nativeBuildInputs = [
     pkg-config
     cmake
+    inkscape
   ];
 
   buildInputs = [
